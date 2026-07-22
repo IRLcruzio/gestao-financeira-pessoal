@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Números financeiros usam a mono — dá precisão de "livro-razão" aos valores */
+  .figure {
+    @apply font-mono tabular-nums;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.gold.DEFAULT");
+    outline-offset: 2px;
+  }
+}
